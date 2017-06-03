@@ -47,16 +47,18 @@ width="100%"
 ```
 
 ### Scenes and Hotspots
+# Scene Interface:
 ```typescript
-// Scene interface
 export interface Scene {
 	[key: string]: {
 	image: string;
 	hotspots: Hotspot
 	}
 }
+```
 
-// Hotspot Interface
+# Hotspot interface:
+```typescript
 export interface Hotspot {
 	[key: string]: {
 		pitch: number;
