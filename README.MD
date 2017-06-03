@@ -46,8 +46,8 @@ width="100%"
 </vrview>
 ```
 
-### Scenes and Hotspots
-# Scene Interface:
+## Scenes and Hotspots
+### Scene Interface:
 ```typescript
 export interface Scene {
 	[key: string]: {
@@ -57,7 +57,7 @@ export interface Scene {
 }
 ```
 
-# Hotspot interface:
+### Hotspot interface:
 ```typescript
 export interface Hotspot {
 	[key: string]: {
@@ -69,7 +69,7 @@ export interface Hotspot {
 }
 ```
 
-Scene object example:
+### Scenes with Hotspot Example:
 
 ```typescript
 scenes: Scene = {
