@@ -20,7 +20,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import your library
+// Add this line
 import { VRViewModule } from 'angular-vrviewer';
 
 @NgModule({
@@ -39,7 +39,6 @@ export class AppModule { }
 Now you can use the `<vrview>` selector to show 360 media in your angular application.
 
 ```xml
-<!-- You can now use your library component in app.component.html -->
 <vrview
 [scenes]="scenes"
 width="100%"
