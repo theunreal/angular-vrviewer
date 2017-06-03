@@ -1,5 +1,5 @@
 # angular-vrviewer
-Embed VR media in your Angular application. Used as a wrapper for [https://developers.google.com/vr/concepts/vrview-web](Google VR View for the Web)
+Embed VR media in your Angular application. Used as a wrapper for [https://developers.google.com/vr/concepts/vrview-web](test)
 
 ## Installation
 
