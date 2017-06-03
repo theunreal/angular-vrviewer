@@ -4,6 +4,9 @@
 Embed VR media in your Angular application. Used as a wrapper for [Google VR view for the Web](https://developers.google.com/vr/concepts/vrview).
 Currently supports only media type of 360 degree images.
 
+## Live Demo
+Visit https://theunreal.github.io/angular-vrview-example/
+
 ## Installation
 
 To install angular-vrviewer, simply run:
@@ -105,9 +108,6 @@ scenes: Scene = {
     }
 };
 ```
-
-## Live Demo
-Visit https://theunreal.github.io/angular-vrview-example/
 
 
 ## License
