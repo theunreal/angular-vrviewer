@@ -75,7 +75,7 @@ export interface Hotspot {
 }
 ```
 
-### Scenes with Hotspot Example:
+### Scenes with Hotspot example:
 
 ```typescript
 scenes: Scene = {
