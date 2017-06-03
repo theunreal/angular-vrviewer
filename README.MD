@@ -17,7 +17,7 @@ Include in your `index.html`:
 
 ## Usage
 
-Include the `VRViewModule` in your app
+Include the `VRViewModule` in your app:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -43,6 +43,7 @@ export class AppModule { }
 ```
 Now you can use the `<vrview>` selector to show 360 media in your angular application.
 
+#### Example:
 ```xml
 <vrview
 [scenes]="scenes"
