@@ -47,6 +47,56 @@ width="100%"
 </vrview>
 ```
 
+### Scenes and Hotspots
+```typescript
+// Scene interface
+export interface Scene {
+	[key: string]: {
+	image: string;
+	hotspots: Hotspot
+	}
+}
+
+// Hotspot Interface
+export interface Hotspot {
+	[key: string]: {
+		pitch: number;
+		yaw: number;
+		radius: number,
+		distance: number
+	}
+}
+```
+
+Scene object example:
+
+```typescript
+scenes: Scene = {
+    world: {
+      image: 'assets/1.jpg',
+      hotspots: {
+        green_area: {
+          pitch: 10,
+          yaw: -15,
+          radius: 0.05,
+          distance: 1
+        },
+      }
+    },
+    green_area: {
+      image: 'assets/2.jpg',
+      hotspots: {
+        world: {
+          pitch: 20,
+          yaw: 0,
+          radius: 0.05,
+          distance: 1
+        },
+      }
+    }
+};
+```
+
 
 ## License
 
