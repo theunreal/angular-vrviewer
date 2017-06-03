@@ -1,5 +1,5 @@
 # angular-vrviewer
-Embed VR media in your Angular application. Used as a wrapper for [Google VR view for the Web](https://github.com/googlevr/vrview).
+Embed VR media in your Angular application. Used as a wrapper for [Google VR view for the Web](https://developers.google.com/vr/concepts/vrview).
 Currently supports only media type of 360 degree images.
 
 ## Installation
@@ -8,6 +8,11 @@ To install angular-vrviewer, simply run:
 
 ```bash
 $ npm install angular-vrviewer --save
+```
+
+Include in your `index.html`:
+```xml
+<script src="//storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
 ```
 
 ## Usage
