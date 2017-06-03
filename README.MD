@@ -29,7 +29,7 @@ import { VRViewModule } from 'angular-vrviewer';
   ],
   imports: [
     BrowserModule,
-    VRViewModule <-- import this module
+    VRViewModule //<-- import this module
   ],
   providers: [],
   bootstrap: [AppComponent]
