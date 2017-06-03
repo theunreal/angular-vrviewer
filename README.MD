@@ -8,15 +8,9 @@ To install this library, run:
 $ npm install angular-vrviewer --save
 ```
 
-## Consuming your library
+## Usage
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
-
-```bash
-$ npm install angular-vrviewer
-```
-
-and then from your Angular `AppModule`:
+Include the `VRViewModule` in your app
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +19,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Import your library
-import { SampleModule } from 'angular-vrviewer';
+import { VRViewModule } from 'angular-vrviewer';
 
 @NgModule({
   declarations: [
@@ -35,37 +29,24 @@ import { SampleModule } from 'angular-vrviewer';
     BrowserModule,
 
     // Specify your library as an import
-    LibraryModule
+    VRViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 ```
-
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Now you can use the `<vrview>` selector to show 360 media in your angular application.
 
 ```xml
 <!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+<vrview
+[scenes]="scenes"
+width="100%"
+[height]="400">
+</vrview>
 ```
 
-## Development
-
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
-
-```bash
-$ npm run build
-```
-
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
-```
 
 ## License
 
