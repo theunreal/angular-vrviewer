@@ -1,0 +1,26 @@
+{
+  "name": "angular-vrviewer",
+  "version": "0.1.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theunreal/angular-vrviewer"
+  },
+  "author": {
+    "name": "Eliran Elnasi",
+    "email": "eliraneln@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theunreal/angular-vrviewer/issues"
+  },
+  "module": "angular-vrviewer.js",
+  "typings": "angular-vrviewer.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
