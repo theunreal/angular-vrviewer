@@ -1,7 +1,7 @@
 import { Component, Input, AfterViewInit, ViewChild } from '@angular/core';
 import { Scene } from './scene.interface';
 
-declare let VRView;
+declare let VRView: any;
 
 @Component({
   selector: 'vrview',
@@ -10,7 +10,7 @@ declare let VRView;
 export class VRViewComponent implements AfterViewInit {
 
   viewer: any;
-  @ViewChild('viewer') viewerElement;
+  @ViewChild('viewer') viewerElement: any;
 
   @Input() scenes: Scene;
   @Input() width: any;
@@ -27,9 +27,8 @@ export class VRViewComponent implements AfterViewInit {
     });
 
     this.viewer.on('ready',() => {
-
       this.loadScene(this.getFirstScene());
-      this.viewer.on('click', (event) => this.loadScene(event.id));
+      this.viewer.on('click', (event) => event.id ? this.loadScene(event.id) : "");
     });
   }
 
