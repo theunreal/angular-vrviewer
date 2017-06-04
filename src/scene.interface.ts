@@ -1,7 +1,7 @@
 export interface Scene {
 	[key: string]: {
 	image: string;
-	hotspots: Hotspot
+	hotspots?: Hotspot
 	}
 }
 

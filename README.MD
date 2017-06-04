@@ -1,22 +1,28 @@
+![Demo Image](https://media.giphy.com/media/3o7btM6O1wZCPiTxTy/giphy.gif)
+
 # angular-vrviewer
+Embed VR media in your Angular application. Used as a wrapper for [Google VR view for the Web](https://developers.google.com/vr/concepts/vrview).
+Currently supports only media type of 360 degree images.
+
+## Live Demo
+Visit https://theunreal.github.io/angular-vrview-example/
 
 ## Installation
 
-To install this library, run:
+To install angular-vrviewer, simply run:
 
 ```bash
 $ npm install angular-vrviewer --save
 ```
 
-## Consuming your library
-
-Once you have published your library to npm, you can import your library in any Angular application by running:
-
-```bash
-$ npm install angular-vrviewer
+Include in your `index.html`:
+```xml
+<script src="//storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
 ```
 
-and then from your Angular `AppModule`:
+## Usage
+
+Include the `VRViewModule` in your app:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,8 +30,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import your library
-import { SampleModule } from 'angular-vrviewer';
+// Add this line
+import { VRViewModule } from 'angular-vrviewer';
 
 @NgModule({
   declarations: [
@@ -33,40 +39,77 @@ import { SampleModule } from 'angular-vrviewer';
   ],
   imports: [
     BrowserModule,
-
-    // Specify your library as an import
-    LibraryModule
+    VRViewModule //<-- import this module
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 ```
+Now you can use the `<vrview>` selector to show 360 media in your angular application.
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
-
+#### Example:
 ```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+<vrview
+[scenes]="scenes"
+width="100%"
+[height]="400">
+</vrview>
 ```
 
-## Development
-
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
-
-```bash
-$ npm run build
+## Scenes and Hotspots
+### Scene Interface:
+```typescript
+export interface Scene {
+	[key: string]: {
+	image: string;
+	hotspots: Hotspot
+	}
+}
 ```
 
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
+### Hotspot interface:
+```typescript
+export interface Hotspot {
+	[key: string]: {
+		pitch: number;
+		yaw: number;
+		radius: number,
+		distance: number
+	}
+}
 ```
+
+### Scenes with Hotspot example:
+
+```typescript
+scenes: Scene = {
+    world: {
+      image: 'assets/1.jpg',
+      hotspots: {
+        green_area: {
+          pitch: 10,
+          yaw: -15,
+          radius: 0.05,
+          distance: 1
+        },
+      }
+    },
+    green_area: {
+      image: 'assets/2.jpg',
+      hotspots: {
+        world: {
+          pitch: 20,
+          yaw: 0,
+          radius: 0.05,
+          distance: 1
+        },
+      }
+    }
+};
+```
+
 
 ## License
 
-MIT © [Eliran Elnasi](mailto:eliraneln@gmail.com)
+MIT © Eliran Elnasi and contributors
